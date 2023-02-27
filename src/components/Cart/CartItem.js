@@ -1,6 +1,6 @@
 import classes from './CartItem.module.css';
 import { useDispatch } from 'react-redux';
-import { cartActions } from '../store/cart';
+import { cartActions } from '../../store/cart';
 
 const CartItem = props => {
   const { name, quantity, price } = props.item;
@@ -9,11 +9,11 @@ const CartItem = props => {
   const dispatch = useDispatch();
 
   const handleIncrementItem = () => {
-    dispatch(cartActions.increaseNumberOfItems({ name, price }));
+    dispatch(cartActions.addItemToCart({ name, price }));
   };
 
   const handleDecrementItem = () => {
-    dispatch(cartActions.decreaseNumberOfItems({ name, price }));
+    dispatch(cartActions.removeItemFromCart({ name, price }));
   };
 
   return (

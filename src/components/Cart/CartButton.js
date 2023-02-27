@@ -1,7 +1,7 @@
 import classes from './CartButton.module.css';
 import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
-import { cartActions } from '../store/cart';
+import { cartActions } from '../../store/cart';
 
 const CartButton = props => {
   const totalItemsInCart = useSelector(state => state.numberOfItemsInCart);

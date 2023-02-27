@@ -14,7 +14,7 @@ const Cart = props => {
         <>
           <ul>
             {cartItems.map((item, index) => (
-              <CartItem key={`${item}: ${index}`} item={item} />
+              <CartItem key={`${item.name}: ${index}`} item={item} />
             ))}
           </ul>
           <hr />

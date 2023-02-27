@@ -16,19 +16,12 @@ const cartSlice = createSlice({
       if (itemIndex === -1) {
         state.itemsInCart.push(action.payload);
       } else {
-        const itemIndex = state.itemsInCart.findIndex(item => item.name === action.payload.name);
         state.itemsInCart[itemIndex].quantity += 1;
       }
       state.numberOfItemsInCart++;
       state.totalPrice += action.payload.price;
     },
-    increaseNumberOfItems(state, action) {
-      const itemIndex = state.itemsInCart.findIndex(item => item.name === action.payload.name);
-      state.itemsInCart[itemIndex].quantity += 1;
-      state.numberOfItemsInCart++;
-      state.totalPrice += action.payload.price;
-    },
-    decreaseNumberOfItems(state, action) {
+    removeItemFromCart(state, action) {
       const itemIndex = state.itemsInCart.findIndex(item => item.name === action.payload.name);
       state.itemsInCart[itemIndex].quantity -= 1;
       --state.numberOfItemsInCart;

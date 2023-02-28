@@ -4,8 +4,8 @@ import CartItem from './CartItem';
 import { useSelector } from 'react-redux';
 
 const Cart = props => {
-  const totalPrice = useSelector(state => state.totalPrice);
-  const cartItems = useSelector(state => state.itemsInCart);
+  const totalPrice = useSelector(state => state.cart.totalPrice);
+  const cartItems = useSelector(state => state.cart.itemsInCart);
 
   return (
     <Card className={classes.cart}>

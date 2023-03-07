@@ -51,6 +51,7 @@ function App() {
         );
       }
     };
+
     isInitial ? (isInitial = false) : sendCartData();
   }, [cart, dispatch]);
 

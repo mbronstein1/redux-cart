@@ -55,7 +55,6 @@ export const fetchCartData = () => {
       }
 
       const cartData = await response.json();
-      console.log(cartData);
       dispatch(cartActions.replaceCart(cartData));
     } catch (err) {
       dispatch(
